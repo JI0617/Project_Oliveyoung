@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+*.pyo
+*.pyd
+*.pyc
+*.log
+
+# Django
+db.sqlite3
+.env
+.env.*
+.venv
+.venv/*
+
+*.sqlite3
+media/
+staticfiles/
+
+# React (frontend 폴더)
+node_modules/
+build/
+.env
+# 의존성 폴더
+frontend/node_modules/
+# 빌드 결과물
+frontend/build/
+# 환경 변수 파일 (민감 정보)
+frontend/.env.local
+frontend/.env.development
+frontend/.env.production
+frontend/.env
+# 로그 파일
+frontend/npm-debug.log
+frontend/yarn-debug.log
+frontend/yarn-error.log
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Docker
+*.pid
+*.seed
+*.bak
+*.swp
+docker-compose.override.yml
+
+# qdrant snapshots
+qdrant_snapshots/
+
+# Jupyter 노트북
+*.ipynb
+
+# 데이터베이스 저장소
+qdrant_storage/
+
+# Django 관리 명령어 (선택적)
+backend/*/management/commands/
+
+# 기타
+coverage/
+dist/
+*.tgz
+*.zip
+
+#migrations
+backend/receipt/migrations/
+backend/*/migrations/
+#receipt services
+backend/receipt/services/
+
+#package-lock
+frontend/package-lock.json
+
+# AWS keypair
+*.pem
