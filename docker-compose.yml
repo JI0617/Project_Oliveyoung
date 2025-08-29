@@ -1,0 +1,33 @@
+# docker-compose.yml
+
+version: "3.8"
+
+services:
+  # Backend FastAPI Service
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    env_file:
+      - ./backend/.env.development # dev
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"] # dev
+    depends_on:
+      - db
+
+  # PostgreSQL Database Service
+  db:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./backend/.env.development
+    restart: unless-stopped
+
+# Persistence
+volumes:
+  postgres_data:
