@@ -3,3 +3,9 @@
 fastapi
 uvicorn[standard]
 psycopg2-binary
+sqlalchemy
+alembic
+
+# api testing
+pytest
+httpx
